@@ -1,4 +1,5 @@
 const express = require('express');
+require("dotenv").config();
 var cors = require('cors')
 const quizData = require('./data.js');
 
@@ -19,6 +20,8 @@ app.get('/quiz/:quizId', (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('server started on port 3000');
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log("server started on port " + PORT);
 });
